@@ -8,7 +8,6 @@ import UpdateProductService from '../services/UpdateProductService';
 export default class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listProducts = new ListProductService();
-    console.log('chegou no controller');
 
     const products = await listProducts.execute();
 
@@ -25,7 +24,6 @@ export default class ProductsController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    console.log('chegou no controller CRIAR');
     const { name, price, quantity } = request.body;
 
     const createProduct = new CreateProductService();
