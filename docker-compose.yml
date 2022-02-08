@@ -43,3 +43,12 @@ services:
       - '8000:80'
     depends_on:
       - db
+
+  redisClient:
+    image: redislabs/redisinsight:latest
+    container_name: apivendas-redis-client
+    tty: true
+    ports:
+      - '8001:8001'
+    depends_on:
+      - redis
